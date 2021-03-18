@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="leaflet.css">
+  
+  <title>Frontend Mentor | IP Address Tracker</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    body {
+      font-family: 'Rubik', sans-serif;
+    }
+
+    .header {
+      background: url('images/pattern-bg.png');
+    }
+
+
+    .ip-address,
+    .location,
+    .timezone,
+    .isp {
+      font-size: 1.7569546120058566vw;
+    }
+
+     @media (max-width: 768px) { 
+      .ip-address,
+      .location,
+      .timezone,
+      .isp {
+        font-size: 1.2rem;
+      }
+
+     }
+
+  </style>
+</head>
+<body>
+
+<div class="header h-60 flex flex-col items-center pt-8 relative">
+  <h1 class="text-3xl text-white font-medium">IP Address Tracker</h1>
+  <div class="inputs flex w-full justify-center mt-5">
+    <input class="bg-white h-12 w-4/12 focus:outline-none pl-3 rounded-l-xl mobile:w-10/12" type="text" name="adresseIP" id="adresseIP" placeholder="Search for any IP address or domain">
+    <button id='btnTrack' class="bg-gray-700 focus:outline-none px-5 rounded-r-xl">
+      <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14"><path fill="none" stroke="#FFF" stroke-width="3" d="M2 1l6 6-6 6"/></svg>
+    </button>
+  </div>
+
+  <div class="flex-wrap -mx-4 overflow-hidden infos absolute bg-white w-10/12 top-44 z-10 rounded-xl flex py-8 justify-around px-10 mobile:flex-col mobile:py-2 mobile:w-11/12">
+
+    <div class="my-4 px-4 w-1/4 overflow-hidden mobile:w-full mobile:text-center mobile:my-2">
+      <div class="card flex flex-col border-r-2 h-full mobile:border-none">
+        <span class="uppercase font-bold text-sm text-black opacity-50">ip address</span>
+        <span class="ip-address text-2xl font-medium mt-2"></span>
+      </div>
+    </div>
+  
+    <div class="my-4 px-4 w-1/4 overflow-hidden mobile:w-full mobile:text-center mobile:my-2">
+      <div class="card flex flex-col border-r-2 h-full mobile:border-none">
+        <span class="uppercase font-bold text-sm text-black opacity-50">location</span>
+        <span class="location text-2xl font-medium mt-2"></span>
+      </div>
+    </div>
+  
+    <div class="my-4 px-4 w-1/4 overflow-hidden mobile:w-full mobile:text-center mobile:my-2">
+      <div class="card flex flex-col border-r-2 h-full mobile:border-none">
+        <span class="uppercase font-bold text-sm text-black opacity-50">timezone</span>
+        <span class="timezone text-2xl font-medium mt-2"></span>
+      </div>
+    </div>
+  
+    <div class="my-4 px-4 w-1/4 overflow-hidden sm:my-4 sm:px-4 sm:w-1/4 md:my-4 md:px-4 md:w-1/4 lg:my-4 lg:px-4 lg:w-1/4 xl:my-4 xl:px-4 xl:w-1/4 mobile:w-full mobile:text-center mobile:my-2">
+      <div class="card flex flex-col h-full">
+        <span class="uppercase font-bold text-sm text-black opacity-50">isp</span>
+        <span class="isp text-2xl font-medium mt-2"></span> 
+      </div>
+    </div>
+  
+  </div>
+
+
+</div>
+
+<div class="map w-full h-full fixed mobile:absolute mobile:z-0 mobile:top-60" id="map">
+  
+</div>
+
+<script src="jquery-3.6.0.js"></script>
+<script src="leaflet.js"></script>
+<script src="api.js"></script>
+</body>
+</html>
