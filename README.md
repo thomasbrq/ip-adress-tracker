@@ -24,7 +24,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Live preview](https://your-live-site-url.com)
+- Live Site URL: [Live preview](https://thomasbrq.github.io/ip-adress-tracker/)
 
 ## My process
 
